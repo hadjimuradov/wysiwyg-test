@@ -8,10 +8,10 @@
         <button @click="formatDoc('redo')" class="toolbar__item">
           <icon-next />
         </button>
-        <button @click="formatDoc('formatBlock', 'h1')" class="toolbar__item">
+        <button @click="formatDoc('fontSize', '6')" class="toolbar__item">
           <icon-title />
         </button>
-        <button @click="formatDoc('formatBlock', 'p')" class="toolbar__item">
+        <button @click="formatDoc('fontSize', '3')" class="toolbar__item">
           <icon-paragraph />
         </button>
         <button @click="addImage" class="toolbar__item">
@@ -63,7 +63,6 @@ export default {
       this.formatDoc('insertImage', url)
     },
     copyHtml() {
-      console.log(this.modelValue)
       navigator.clipboard.writeText(this.modelValue)
           .then(() => {
             alert('Скопировано в буфер обмена')
